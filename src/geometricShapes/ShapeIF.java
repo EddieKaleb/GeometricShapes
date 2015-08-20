@@ -1,5 +1,7 @@
 package geometricShapes;
 
-public class ShapeIF {
-
+public interface ShapeIF {
+	
+	public double perimeter();
+	public double area();
 }
