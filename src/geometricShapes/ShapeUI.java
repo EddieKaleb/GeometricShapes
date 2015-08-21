@@ -37,21 +37,27 @@ public class ShapeUI {
 		boolean back = false;
 		while (!back){
 			Scanner s = new Scanner(System.in);
-			System.out.println("What do you want to do?");
+			System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
 			System.out.println("1 - Calculate the Perimeter   2 - Calculate the Area");
 			String op = s.nextLine();
 			switch(op){
 				case "1":
 					System.out.println("Type the side's value:");
 					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
-					lozenge.perimeter();
+					System.out.println(lozenge.perimeter());
+					break;
 				case "2" : 
 					System.out.println("Type the major diagonal: ");
-					int D = s.nextInt();
-					System.out.println("Type the ");
-					
+					double D = s.nextDouble();
+					System.out.println("Type the smaller diagonal: ");
+					double d = s.nextDouble();
+					Lozenge l = new Lozenge(0, D, d);
+					System.out.println(l.area());
+					break;
+				default:
+					back = true;
+					break;
 			}
-		
 	  }
 	}
 }
