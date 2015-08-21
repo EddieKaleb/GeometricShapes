@@ -1,8 +1,18 @@
+/**
+ * @authors Eddie Kaleb, Rebeca Galdino and Thayanne Luiza.
+ * @date August/2015
+ * Main menu of Geometrical Shapes project. 
+ */
 package geometricShapes;
 
 import java.util.Scanner;
 
 public class ShapeUI {
+	
+	/**
+	 * Menu which directs the user through the sections. 
+	 *
+	 */
 	public static void main(String[] args){
 		boolean exit = false;
 		while (!exit){
@@ -34,6 +44,9 @@ public class ShapeUI {
 		
 	}
 	
+	/**
+	 * Lozenge operations' menu, which call the calculation methods
+	 */
 	public static void lozengeOperations(){
 		boolean back = false;
 		while (!back){
@@ -62,7 +75,10 @@ public class ShapeUI {
 	  }
 	}
 	
-   public static void rectangleOperations(){
+	/**
+	 * Lozenge operations' menu, which call the calculation methods
+	 */
+    public static void rectangleOperations(){
 	   boolean back = false;
 		while (!back){
 			Scanner s = new Scanner(System.in);

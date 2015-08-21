@@ -9,24 +9,45 @@ public class Lozenge extends AbstractQuadrilateral {
 	
 	private double diagonal;
 	
-	
+	/**
+	 * Lozenge's class constructor. Calls the abstract class AbstractQuadrilateral's constructor and sets a diagonal element.
+	 * @param side
+	 * @param height
+	 * @param diagonal
+	 */
 	public Lozenge(double side, double height, double diagonal) {
 		super(side, height);
 		setDiagonal(diagonal);
 	}
 	
+	/**
+	 * Perimeter method. 
+	 * @overrides the AbstractQuadrilateral's method
+	 */
 	public double perimeter(){
 		return 4*side;
 	}
 	
+	/**
+	 * Area method. 
+	 * @overrides the AbstractQuadrilateral's method
+	 */
 	public double area(){
 		return (height * diagonal)/2;
 	}
 	
+	/**
+	 * Get diagonal method  
+	 * @return the diagonal's value
+	 */
 	public double getDiagonal() {
 		return diagonal;
 	}
-
+	
+	/**
+	 * Set diagonal method
+	 * @param diagonal
+	 */
 	public void setDiagonal(double diagonal) {
 		this.diagonal = diagonal;
 	}
