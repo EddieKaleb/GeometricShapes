@@ -5,122 +5,212 @@
  */
 package geometricShapes;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class ShapeUI {
-	
+
 	/**
-	 * Menu which directs the user through the sections. 
+	 * Menu which directs the user through the sections.
 	 *
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		boolean exit = false;
-		while (!exit){
+		while (!exit) {
 
 			Scanner s = new Scanner(System.in);
 			System.out.println("WELCOME!");
-			System.out.println("Choose the shape you want to explore (press 6 to Exit): ");
-			System.out. println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
+			System.out
+					.println("Choose the shape you want to explore (press 6 to Exit): ");
+			System.out
+					.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
 			String choice = s.nextLine();
-			switch(choice){
-				case "1" : 
-					rectangleOperations();
-					break;
-				case "2" :
-					break;
-				case "3" :
-					break;
-				case "4" :
-					break;
-				case "5" :
-					lozengeOperations();
-					break;
-				default:
-					exit = true;
-					break;		
+			switch (choice) {
+			case "1":
+				rectangleOperations();
+				break;
+			case "2":
+				squareOperations();
+				break;
+			case "3":
+				trapeziumOperations();
+				break;
+			case "4":
+				break;
+			case "5":
+				lozengeOperations();
+				break;
+			default:
+				exit = true;
+				break;
 			}
-			
+
 		}
-		
+
 	}
-	
+
 	/**
 	 * Lozenge operations' menu, which call the calculation methods
 	 */
-	public static void lozengeOperations(){
+	public static void lozengeOperations() {
 		boolean back = false;
-		while (!back){
+		while (!back) {
 			Scanner s = new Scanner(System.in);
-			System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
-			System.out.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+			System.out
+					.println("What do you want to do? (Press 3 to back to the Menu.)");
+			System.out
+					.println("1 - Calculate the Perimeter   2 - Calculate the Area");
 			String op = s.nextLine();
-			switch(op){
-				case "1":
-					System.out.println("Type the side's value:");
-					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
-					System.out.println(lozenge.perimeter());
-					break;
-				case "2" : 
-					System.out.println("Type the major diagonal: ");
-					double D = s.nextDouble();
-					System.out.println("Type the smaller diagonal: ");
-					double d = s.nextDouble();
-					Lozenge l = new Lozenge(0, D, d);
-					System.out.println(l.area());
-					break;
-				default:
-					back = true;
-					break;
+			switch (op) {
+			case "1":
+				System.out.println("Type the side's value:");
+				Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
+				System.out.println(lozenge.perimeter());
+				break;
+			case "2":
+				System.out.println("Type the major diagonal: ");
+				double D = s.nextDouble();
+				System.out.println("Type the smaller diagonal: ");
+				double d = s.nextDouble();
+				Lozenge l = new Lozenge(0, D, d);
+				System.out.println(l.area());
+				break;
+			default:
+				back = true;
+				break;
 			}
-	  }
+		}
 	}
-	
+
 	/**
 	 * Lozenge operations' menu, which call the calculation methods
 	 */
-    public static void rectangleOperations(){
-	   boolean back = false;
-		while (!back){
+	public static void rectangleOperations() {
+		boolean back = false;
+		while (!back) {
 			Scanner s = new Scanner(System.in);
-			System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
-			System.out.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+			System.out
+					.println("What do you want to do? (Press 3 to back to the Menu.)");
+			System.out
+					.println("1 - Calculate the Perimeter   2 - Calculate the Area");
 			String op = s.nextLine();
-			switch(op){
+			switch (op) {
+			case "1":
+				System.out.println("Type the base's value:");
+				double base = s.nextDouble();
+				System.out.println("Type the height's value:");
+				double height = s.nextDouble();
+				Rectangle rectangle = new Rectangle(base, height);
+				System.out.println(rectangle.perimeter());
+				break;
+			case "2":
+				System.out.println("Type the base's value:");
+				double b = s.nextDouble();
+				System.out.println("Type the height's value:");
+				double h = s.nextDouble();
+				Rectangle r = new Rectangle(b, h);
+				System.out.println(r.area());
+				break;
+			default:
+				back = true;
+				break;
+			}
+		}
+	}
+
+	// ---------------------------------------------------------------------------------------------------------------
+	// SQUARE
+	// ---------------------------------------------------------------------------------------------------------------
+
+	public static void squareOperations() {
+		try {
+			boolean back = false;
+			do{
+			BufferedReader l = new BufferedReader(new InputStreamReader(
+					System.in));
+			System.out
+					.println("What do you want to do? (Press 3 to back to the Menu.)");
+			System.out
+					.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+			String op = l.readLine();
+				switch (op) {
 				case "1":
-					System.out.println("Type the base's value:");
-					double base = s.nextDouble();
-					System.out.println("Type the height's value:");
-					double height = s.nextDouble();
-					Rectangle rectangle = new Rectangle(base, height);
-					System.out.println(rectangle.perimeter());
+					System.out.println("Type the side's value: ");
+					double side = Double.parseDouble(l.readLine());
+					double height = side;
+					Square s = new Square(side, height);
+					System.out.println(s.perimeter());
 					break;
-				case "2" : 
-					System.out.println("Type the base's value:");
-					double b = s.nextDouble();
-					System.out.println("Type the height's value:");
-					double h = s.nextDouble();
-					Rectangle r = new Rectangle(b, h);
-					System.out.println(r.area());
+				case "2":
+					System.out.println("Type the side's value: ");
+					side = Double.parseDouble(l.readLine());
+					height = side;
+					s = new Square(side, height);
+					System.out.println(s.area());
 					break;
 				default:
 					back = true;
 					break;
-			}
+				}
+			}while(!back);
+
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
 		}
-   }
-    
-    //---------------------------------------------------------------------------------------------------------------
-    //													SQUARE
-    //---------------------------------------------------------------------------------------------------------------
-    
-    public void squareOperations(){
-    	try{
-    		
-    	}catch(Exception e){
-    		System.err.println(e.getMessage());
-    	}
-    }
-    
-    
-    
+	}
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+//TRAPEZIUM 
+//--------------------------------------------------------------------------------------------------------------
+
+
+	public static void trapeziumOperations(){
+	try {
+		boolean back = false;
+		do{
+		BufferedReader l = new BufferedReader(new InputStreamReader(
+				System.in));
+		System.out
+				.println("What do you want to do? (Press 3 to back to the Menu.)");
+		System.out
+				.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+		String op = l.readLine();
+			switch (op) {
+			case "1":
+				System.out.println("Type the side's value: ");
+				double side   = Double.parseDouble(l.readLine());
+				System.out.println("Type the height's value: ");
+				double height = Double.parseDouble(l.readLine());
+				System.out.println("Type the biggest side's value: ");
+				double big = Double.parseDouble(l.readLine());
+				System.out.println("Type the smallest side's value: ");
+				double small = Double.parseDouble(l.readLine());
+				Trapezium t = new Trapezium(side, height, big, small);
+				System.out.println(t.perimeter());
+				break;
+			case "2":
+				System.out.println("Type the side's value: ");
+				side   = Double.parseDouble(l.readLine());
+				System.out.println("Type the height's value: ");
+				height = Double.parseDouble(l.readLine());
+				System.out.println("Type the biggest side's value: ");
+				big = Double.parseDouble(l.readLine());
+				System.out.println("Type the smallest side's value: ");
+				small = Double.parseDouble(l.readLine());
+				t = new Trapezium(side, height, big, small);
+				System.out.println(t.perimeter());
+				break;
+			default:
+				back = true;
+				break;
+			}
+		}while(!back);
+
+	} catch (Exception e) {
+		System.err.println(e.getMessage());
+	}
+  }
 }

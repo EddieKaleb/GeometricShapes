@@ -11,15 +11,15 @@ public class Trapezium extends AbstractQuadrilateral{
 	}	
 
 	public double perimeter() throws Exception{
-		if(biggestSide <= 0 || smallestSide <= 0)
-			throw new Exception("Wrong value Typed. Should be greater than 0!");	
+		if(side <= 0 || height <= 0 || biggestSide <= 0 || smallestSide <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
 		else
 			return 2*side + biggestSide + smallestSide;
 	}
 		
 	public double area()throws Exception{
-		if(biggestSide <= 0 || smallestSide <= 0)
-			throw new Exception("Wrong value Typed. Should be greater than 0!");	
+		if(side <= 0 || height <= 0 || biggestSide <= 0 || smallestSide <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
 		else
 	return ((biggestSide + smallestSide)*height)/2;
 	}
