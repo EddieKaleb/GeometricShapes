@@ -14,6 +14,7 @@ public class ShapeUI {
 			String choice = s.nextLine();
 			switch(choice){
 				case "1" : 
+					rectangleOperations();
 					break;
 				case "2" :
 					break;
@@ -22,7 +23,7 @@ public class ShapeUI {
 				case "4" :
 					break;
 				case "5" :
-					lozengeoperations();
+					lozengeOperations();
 					break;
 				default:
 					exit = true;
@@ -33,7 +34,7 @@ public class ShapeUI {
 		
 	}
 	
-	public static void lozengeoperations(){
+	public static void lozengeOperations(){
 		boolean back = false;
 		while (!back){
 			Scanner s = new Scanner(System.in);
@@ -60,4 +61,35 @@ public class ShapeUI {
 			}
 	  }
 	}
+	
+   public static void rectangleOperations(){
+	   boolean back = false;
+		while (!back){
+			Scanner s = new Scanner(System.in);
+			System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
+			System.out.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+			String op = s.nextLine();
+			switch(op){
+				case "1":
+					System.out.println("Type the base's value:");
+					double base = s.nextDouble();
+					System.out.println("Type the height's value:");
+					double height = s.nextDouble();
+					Rectangle rectangle = new Rectangle(base, height);
+					System.out.println(rectangle.perimeter());
+					break;
+				case "2" : 
+					System.out.println("Type the base's value:");
+					double b = s.nextDouble();
+					System.out.println("Type the height's value:");
+					double h = s.nextDouble();
+					Rectangle r = new Rectangle(b, h);
+					System.out.println(r.area());
+					break;
+				default:
+					back = true;
+					break;
+			}
+		}
+   }
 }

@@ -1,3 +1,8 @@
+/**
+ * @author Rebeca Galdino
+ * @date 21/08/2015
+ * Lozenge class from Geometric Shapes project. Owns the perimeter and area methods of the lozenge.
+ */
 package geometricShapes;
 
 public class Lozenge extends AbstractQuadrilateral {
