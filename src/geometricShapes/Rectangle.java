@@ -20,7 +20,10 @@ public class Rectangle extends AbstractQuadrilateral {
 	 * Perimeter method. 
 	 * @overrides the AbstractQuadrilateral's method
 	 */
-	public double perimeter(){
+	public double perimeter() throws Exception{
+		if(side <= 0 || height <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
+		else
 		return (2 * side)  + (2 * height);
 	}
 	
@@ -28,7 +31,10 @@ public class Rectangle extends AbstractQuadrilateral {
 	 * Area method. 
 	 * @overrides the AbstractQuadrilateral's method
 	 */
-	public double area(){
+	public double area() throws Exception{
+		if(side <= 0 || height <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
+		else
 		return side * height;
 	}
 	

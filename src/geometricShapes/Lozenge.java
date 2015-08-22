@@ -24,7 +24,10 @@ public class Lozenge extends AbstractQuadrilateral {
 	 * Perimeter method. 
 	 * @overrides the AbstractQuadrilateral's method
 	 */
-	public double perimeter(){
+	public double perimeter() throws Exception{
+		if(side <= 0 || height <= 0 || diagonal <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
+		else
 		return 4*side;
 	}
 	
@@ -32,7 +35,10 @@ public class Lozenge extends AbstractQuadrilateral {
 	 * Area method. 
 	 * @overrides the AbstractQuadrilateral's method
 	 */
-	public double area(){
+	public double area() throws Exception{
+		if(side <= 0 || height <= 0 || diagonal <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
+		else
 		return (height * diagonal)/2;
 	}
 	

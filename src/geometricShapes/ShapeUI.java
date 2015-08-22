@@ -16,77 +16,97 @@ public class ShapeUI {
 	 *
 	 */
 	public static void main(String[] args) {
-		boolean exit = false;
-		while (!exit) {
+	  try{
+		  
+			boolean exit = false;
+			do {
+	
+				Scanner sc = new Scanner(System.in);
+				System.out.println("WELCOME!");
+				System.out.println("Choose the shape you want to explore (press 6 to Exit): ");
+				System.out
+						.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
+				String choice = sc.nextLine();
+				switch (choice) {
+					case "1":
+						rectangleOperations();
+						break;
+					case "2":
+						squareOperations();
+						break;
+					case "3":
+						trapeziumOperations();
+						break;
+					case "4":
+						break;
+					case "5":
+						lozengeOperations();
+						break;
+					case "6":
+		                 System.out.println("Quitting Program...");
+		                 exit = true;
+		                 break;
+		            default:
+		                 System.err.println("Sorry, please enter valid Option");
 
-			Scanner s = new Scanner(System.in);
-			System.out.println("WELCOME!");
-			System.out
-					.println("Choose the shape you want to explore (press 6 to Exit): ");
-			System.out
-					.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
-			String choice = s.nextLine();
-			switch (choice) {
-			case "1":
-				rectangleOperations();
-				break;
-			case "2":
-				squareOperations();
-				break;
-			case "3":
-				trapeziumOperations();
-				break;
-			case "4":
-				break;
-			case "5":
-				lozengeOperations();
-				break;
-			default:
-				exit = true;
-				break;
-			}
+	            }// End of switch statement
 
-		}
+	         } while (!exit);
+	            // Exiting message when user decides to quit Program
+	            System.out.println("Thanks for using this Program...");
 
-	}
+	   } catch (Exception ex) {
+	       // Error Message
+	       System.err.println("Sorry problem occured within Program");
+	   }
+
+	}// End of main Method
+	
+	
 
 	/**
-	 * Lozenge operations' menu, which call the calculation methods
+	 * LOZENGE operations' menu, which call the calculation methods
 	 */
 	public static void lozengeOperations() {
-		boolean back = false;
-		while (!back) {
-			Scanner s = new Scanner(System.in);
-			System.out
-					.println("What do you want to do? (Press 3 to back to the Menu.)");
-			System.out
-					.println("1 - Calculate the Perimeter   2 - Calculate the Area");
-			String op = s.nextLine();
-			switch (op) {
-			case "1":
-				System.out.println("Type the side's value:");
-				Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
-				System.out.println(lozenge.perimeter());
-				break;
-			case "2":
-				System.out.println("Type the major diagonal: ");
-				double D = s.nextDouble();
-				System.out.println("Type the smaller diagonal: ");
-				double d = s.nextDouble();
-				Lozenge l = new Lozenge(0, D, d);
-				System.out.println(l.area());
-				break;
-			default:
-				back = true;
-				break;
-			}
+		try {
+			boolean back = false;
+			while (!back) {
+				Scanner s = new Scanner(System.in);
+				System.out
+						.println("What do you want to do? (Press 3 to back to the Menu.)");
+				System.out
+						.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+				String op = s.nextLine();
+				switch (op) {
+				case "1":
+					System.out.println("Type the side's value:");
+					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
+					System.out.println(lozenge.perimeter());
+					break;
+				case "2":
+					System.out.println("Type the major diagonal: ");
+					double D = s.nextDouble();
+					System.out.println("Type the smaller diagonal: ");
+					double d = s.nextDouble();
+					Lozenge l = new Lozenge(0, D, d);
+					System.out.println(l.area());
+					break;
+				default:
+					back = true;
+					break;
+				}
+		}
+		} catch (Exception e){
+			System.err.println(e.getMessage());
 		}
 	}
 
 	/**
-	 * Lozenge operations' menu, which call the calculation methods
+	 * RECTANGLE operations' menu, which call the calculation methods
 	 */
 	public static void rectangleOperations() {
+	   try {
+		   
 		boolean back = false;
 		while (!back) {
 			Scanner s = new Scanner(System.in);
@@ -116,7 +136,10 @@ public class ShapeUI {
 				back = true;
 				break;
 			}
-		}
+		 } 
+	   } catch (Exception e){
+		   System.err.println(e.getMessage());
+	   }
 	}
 
 	// ---------------------------------------------------------------------------------------------------------------
