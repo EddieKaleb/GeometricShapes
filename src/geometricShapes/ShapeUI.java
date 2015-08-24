@@ -163,14 +163,14 @@ public class ShapeUI {
 					System.out.println("Type the side's value: ");
 					double side = Double.parseDouble(l.readLine());
 					double height = side;
-					Square s = new Square(side, height);
+					Square s = new Square(side);
 					System.out.println(s.perimeter());
 					break;
 				case "2":
 					System.out.println("Type the side's value: ");
 					side = Double.parseDouble(l.readLine());
 					height = side;
-					s = new Square(side, height);
+					s = new Square(side);
 					System.out.println(s.area());
 					break;
 				default:
