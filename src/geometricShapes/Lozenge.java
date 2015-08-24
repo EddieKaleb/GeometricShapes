@@ -12,8 +12,8 @@ public class Lozenge extends AbstractQuadrilateral {
 	/**
 	 * Lozenge's class constructor. Calls the abstract class AbstractQuadrilateral's constructor and sets a diagonal element.
 	 * @param side
-	 * @param height
-	 * @param diagonal
+	 * @param height - equivalent to the biggest diagonal
+	 * @param diagonal - smallest diagonal 
 	 */
 	public Lozenge(double side, double height, double diagonal) {
 		super(side, height);
