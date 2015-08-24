@@ -81,7 +81,7 @@ public class ShapeUI {
 				switch (op) {
 				case "1":
 					System.out.println("Type the side's value:");
-					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0);
+					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0, 0);
 					System.out.println(lozenge.perimeter());
 					break;
 				case "2":
@@ -89,7 +89,7 @@ public class ShapeUI {
 					double D = s.nextDouble();
 					System.out.println("Type the smaller diagonal: ");
 					double d = s.nextDouble();
-					Lozenge l = new Lozenge(0, D, d);
+					Lozenge l = new Lozenge(0,0, D, d);
 					System.out.println(l.area());
 					break;
 				default:
