@@ -25,7 +25,7 @@ public class ShapeUI {
 				System.out.println("WELCOME!");
 				System.out.println("Choose the shape you want to explore (press 6 to Exit): ");
 				System.out
-						.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
+						.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Rhombus");
 				String choice = sc.nextLine();
 				ShapeUI shape = new ShapeUI();
 				switch (choice) {
@@ -41,7 +41,7 @@ public class ShapeUI {
 					case "4":
 						break;
 					case "5":
-						shape.lozengeOperations();
+						shape.rhombusOperations();
 						break;
 					case "6":
 		                 System.out.println("Quitting Program...");
@@ -66,9 +66,9 @@ public class ShapeUI {
 	
 
 	/**
-	 * LOZENGE operations' menu, which call the calculation methods
+	 * RHOMBUS operations' menu, which call the calculation methods
 	 */
-	public void lozengeOperations() {
+	public void rhombusOperations() {
 		try {
 			boolean back = false;
 			while (!back) {
@@ -81,7 +81,7 @@ public class ShapeUI {
 				switch (op) {
 				case "1":
 					System.out.println("Type the side's value:");
-					Lozenge lozenge = new Lozenge((s.nextDouble()), 0, 0, 0);
+					Rhombus lozenge = new Rhombus((s.nextDouble()), 0, 0, 0);
 					System.out.println(lozenge.perimeter());
 					break;
 				case "2":
@@ -89,7 +89,7 @@ public class ShapeUI {
 					double D = s.nextDouble();
 					System.out.println("Type the smaller diagonal: ");
 					double d = s.nextDouble();
-					Lozenge l = new Lozenge(0,0, D, d);
+					Rhombus l = new Rhombus(0,0, D, d);
 					System.out.println(l.area());
 					break;
 				default:
