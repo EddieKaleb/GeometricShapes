@@ -27,20 +27,21 @@ public class ShapeUI {
 				System.out
 						.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Lozenge");
 				String choice = sc.nextLine();
+				ShapeUI shape = new ShapeUI();
 				switch (choice) {
 					case "1":
-						rectangleOperations();
+						shape.rectangleOperations();
 						break;
 					case "2":
-						squareOperations();
+						shape.squareOperations();
 						break;
 					case "3":
-						trapeziumOperations();
+						shape.trapeziumOperations();
 						break;
 					case "4":
 						break;
 					case "5":
-						lozengeOperations();
+						shape.lozengeOperations();
 						break;
 					case "6":
 		                 System.out.println("Quitting Program...");
@@ -67,7 +68,7 @@ public class ShapeUI {
 	/**
 	 * LOZENGE operations' menu, which call the calculation methods
 	 */
-	public static void lozengeOperations() {
+	public void lozengeOperations() {
 		try {
 			boolean back = false;
 			while (!back) {
@@ -84,7 +85,7 @@ public class ShapeUI {
 					System.out.println(lozenge.perimeter());
 					break;
 				case "2":
-					System.out.println("Type the major diagonal: ");
+					System.out.println("Type the biggest diagonal: ");
 					double D = s.nextDouble();
 					System.out.println("Type the smaller diagonal: ");
 					double d = s.nextDouble();
@@ -104,7 +105,7 @@ public class ShapeUI {
 	/**
 	 * RECTANGLE operations' menu, which call the calculation methods
 	 */
-	public static void rectangleOperations() {
+	public void rectangleOperations() {
 	   try {
 		   
 		boolean back = false;
@@ -146,7 +147,7 @@ public class ShapeUI {
 	// SQUARE
 	// ---------------------------------------------------------------------------------------------------------------
 
-	public static void squareOperations() {
+	public void squareOperations() {
 		try {
 			boolean back = false;
 			do{
@@ -190,7 +191,7 @@ public class ShapeUI {
 //--------------------------------------------------------------------------------------------------------------
 
 
-	public static void trapeziumOperations(){
+	public void trapeziumOperations(){
 	try {
 		boolean back = false;
 		do{
