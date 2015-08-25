@@ -1,5 +1,6 @@
 /**
- * 
+ * @author Thayanne Luiza
+ * Cicle class from project Geometric Shapes. Owns the methods to calculate the circumference's value of perimeter and area.
  */
 package geometricShapes;
 
@@ -24,10 +25,10 @@ public class Circle implements ShapeIF{
 	}
 	
 	public double perimeter() throws Exception{
-		return 2 * 3.14 * getRadius();
+		return 2 * PI * getRadius();
 	}
 	
 	public double area() throws Exception{
-		return 3.14 * getRadius() * getRadius();
+		return PI * getRadius() * getRadius();
 	}
 }
