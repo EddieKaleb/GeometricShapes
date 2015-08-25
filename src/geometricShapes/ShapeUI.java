@@ -24,8 +24,7 @@ public class ShapeUI {
 				Scanner sc = new Scanner(System.in);
 				System.out.println("WELCOME!");
 				System.out.println("Choose the shape you want to explore (press 6 to Exit): ");
-				System.out
-						.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Rhombus");
+				System.out.println("1 - Rectangle  2 - Square  3 - Trapezium  4 - Circle  5 - Rhombus");
 				String choice = sc.nextLine();
 				ShapeUI shape = new ShapeUI();
 				switch (choice) {
@@ -39,6 +38,7 @@ public class ShapeUI {
 						shape.trapeziumOperations();
 						break;
 					case "4":
+						shape.circleOperations();
 						break;
 					case "5":
 						shape.rhombusOperations();
@@ -197,8 +197,7 @@ public class ShapeUI {
 		do{
 		BufferedReader l = new BufferedReader(new InputStreamReader(
 				System.in));
-		System.out
-				.println("What do you want to do? (Press 3 to back to the Menu.)");
+		System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
 		System.out
 				.println("1 - Calculate the Perimeter   2 - Calculate the Area");
 		String op = l.readLine();
@@ -237,4 +236,41 @@ public class ShapeUI {
 		System.err.println(e.getMessage());
 	}
   }
+
+	/* ----------------------------------------------------------------------
+	 * Circle
+	 * ----------------------------------------------------------------------
+	 */ 
+	
+	public  void circleOperations(){
+		
+		try{
+			boolean back = false;
+			Scanner sc = new Scanner(System.in);
+			while(!back){
+				System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
+				System.out.println("1 - Calculate the Circumference  2 - Calculate the Area");
+				String op = sc.nextLine();
+				switch(op){
+					case "1":
+						System.out.println("Type the radius value: ");
+						Circle circle = new Circle(sc.nextDouble());
+						System.out.println(circle.perimeter());
+						break;
+					case "2":
+						System.out.println("Type the radius value: ");
+						Circle circle2 = new Circle(sc.nextDouble());
+						System.out.println(circle2.perimeter());
+						break;
+					default:
+						back = true;
+						break;
+				}
+			}
+			
+		} catch(Exception e){
+			System.err.println(e.getMessage());
+		}
+		
+	}
 }
