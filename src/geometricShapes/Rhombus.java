@@ -19,8 +19,8 @@ public class Rhombus extends AbstractQuadrilateral {
 	 * @param smallestDiagonal
 	 * @param biggestDiagonal
 	 */
-	public Rhombus(double side, double height, double smallestDiagonal, double biggestDiagonal) {
-		super(side, height);
+	public Rhombus(double side,double smallestDiagonal, double biggestDiagonal) {
+		super(side, 0);
 		setSmallestDiagonal(smallestDiagonal);
 		setBiggestDiagonal(biggestDiagonal);
 	}
@@ -50,7 +50,13 @@ public class Rhombus extends AbstractQuadrilateral {
 	/**
 	 * Get Height's value method
 	 */
-	// public double get // TODO
+	public double rhombusHeight(double a, double side) throws Exception{
+		if(a <= 0 || side <= 0)
+			throw new Exception("Wrong(s) value(s) Typed. Should be greater than 0!");	
+		else	
+		return a/side;
+		
+	}
 	
 	
 	
