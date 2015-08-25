@@ -74,14 +74,14 @@ public class ShapeUI {
 			while (!back) {
 				Scanner s = new Scanner(System.in);
 				System.out
-						.println("What do you want to do? (Press 3 to back to the Menu.)");
+						.println("What do you want to do? (Press 4 to back to the Menu.)");
 				System.out
-						.println("1 - Calculate the Perimeter   2 - Calculate the Area");
+						.println("1 - Calculate the Perimeter   2 - Calculate the Area  3 - Calculate the height of the rhombus (You must know the area first) ");
 				String op = s.nextLine();
 				switch (op) {
 				case "1":
 					System.out.println("Type the side's value:");
-					Rhombus lozenge = new Rhombus((s.nextDouble()), 0, 0, 0);
+					Rhombus lozenge = new Rhombus((s.nextDouble()), 0, 0);
 					System.out.println(lozenge.perimeter());
 					break;
 				case "2":
@@ -89,9 +89,16 @@ public class ShapeUI {
 					double D = s.nextDouble();
 					System.out.println("Type the smaller diagonal: ");
 					double d = s.nextDouble();
-					Rhombus l = new Rhombus(0,0, D, d);
+					Rhombus l = new Rhombus(0, D, d);
 					System.out.println(l.area());
 					break;
+				case "3":
+					System.out.println("Type the area's value:");
+					double area = s.nextDouble();
+					System.out.println("Type the side's value:");
+					double side = s.nextDouble();
+					Rhombus r = new Rhombus(0, 0, 0);
+					System.out.println(r.rhombusHeight(area,side));
 				default:
 					back = true;
 					break;
