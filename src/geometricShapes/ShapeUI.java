@@ -65,9 +65,9 @@ public class ShapeUI {
 	
 	
 
-	/**
-	 * RHOMBUS operations' menu, which call the calculation methods
-	 */
+	// ---------------------------------------------------------------------------------------------------------------
+	// RHOMBUS
+	// ---------------------------------------------------------------------------------------------------------------
 	public void rhombusOperations() {
 		try {
 			boolean back = false;
@@ -109,9 +109,9 @@ public class ShapeUI {
 		}
 	}
 
-	/**
-	 * RECTANGLE operations' menu, which call the calculation methods
-	 */
+	// ---------------------------------------------------------------------------------------------------------------
+	// RECTANGLE
+	// ---------------------------------------------------------------------------------------------------------------
 	public void rectangleOperations() {
 	   try {
 		   
@@ -253,8 +253,8 @@ public class ShapeUI {
 		
 		try{
 			boolean back = false;
-			Scanner sc = new Scanner(System.in);
-			while(!back){
+			do{	
+				Scanner sc = new Scanner(System.in);
 				System.out.println("What do you want to do? (Press 3 to back to the Menu.)");
 				System.out.println("1 - Calculate the Circumference  2 - Calculate the Area");
 				String op = sc.nextLine();
@@ -273,7 +273,7 @@ public class ShapeUI {
 						back = true;
 						break;
 				}
-			}
+			  }while(!back);
 			
 		} catch(Exception e){
 			System.err.println(e.getMessage());
