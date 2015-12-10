@@ -6,7 +6,7 @@ public class Square extends AbstractQuadrilateral{
 	/**
 	 * @param side
 	 */
-	protected Square(double side) {
+	public Square(double side) {
 		super(side, side);
 	}
 
